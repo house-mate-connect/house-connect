@@ -10,6 +10,7 @@ import SignUp from '@/components/pages/SignUp';
 import About from '@/components/pages/About';
 import SignUpProfileOutro from '@/components/pages/SignUpProfileOutro';
 import HouseDetailTemplate from '@/components/templates/HouseDetailTemplate';
+import HouseRegister from '@/components/pages/HouseRegister';
 
 const router = createBrowserRouter([
   {
@@ -30,10 +31,12 @@ const router = createBrowserRouter([
     children: [
       {
         path: 'house',
-        element: <span>house page</span>,
-        // children: [
-        //   { path: 'house-detail/:houseId', element: <HouseDetailTemplate /> },
-        // ],
+        children: [
+          {
+            path: 'regist',
+            element: <HouseRegister />,
+          },
+        ],
       },
     ],
   },
